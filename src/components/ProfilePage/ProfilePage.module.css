@@ -1,0 +1,4 @@
+.maincontent {
+    grid-area: mc;
+    background-color: white;
+}

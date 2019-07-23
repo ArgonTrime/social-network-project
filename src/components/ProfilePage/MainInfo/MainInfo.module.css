@@ -1,0 +1,10 @@
+.mainImage {
+    width: 1020px;
+    height: 300px;
+}
+.mainAvatar {
+    width: 150px;
+    height: 150px;
+    float: left;
+    padding: 20px;
+}

@@ -11,77 +11,16 @@
   margin: 0 auto;
 }
 
-/* grid css for header, Header component, remove comments work - ProfilePage*/
-.header {
-  grid-area: h;
-  background-color: #339966	;
-}
 
-
-.header img {
-  height: 60px;
-  margin: 2px;
-}
-
-/* grid css navBar, NavBar component */
-.navbar {
-  grid-area: nb;
-  background-color: #CCCCCC;
-  height: 100vh;
-}
-.navbar div {
-  background-color: #339966;
-  color: white;
-  margin: 5px;
-  padding: 2px;
-}
 
 /* grid css mainContent */
-.maincontent {
-  grid-area: mc;
-  background-color: white;
-}
+
 
 /* css MainInfo component */
-.mainImage {
-  width: 1020px;
-  height: 300px;
-}
-.mainAvatar {
-  width: 150px;
-  height: 150px;
-  float: left;
-  padding: 20px;
-}
 
 /* css MyPost component */
-.myPost {
-  padding: 20px 0px;
-}
-.newPostTextForm {
-  width: 1020px;
-  height: 100px;
-  resize: none;
-}
 
-.buttonPost {
-  float: right;
-  background-color: #339966;
-  color: white;
-}
 
 
 
 /* css NewPost component */
-.newPost {
-  width: 980px;
-  height: 50px;
-  padding: 20px;
-}
-.newPost img {
-  float: left;
-  padding-right: 20px;
-  width: 50px;
-  height: 50px;
-
-}

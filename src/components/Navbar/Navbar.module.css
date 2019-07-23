@@ -1,0 +1,11 @@
+.navbar {
+    grid-area: nb;
+    background-color: #CCCCCC;
+    height: 100vh;
+}
+.navbar div {
+    background-color: #339966;
+    color: white;
+    margin: 5px;
+    padding: 2px;
+}

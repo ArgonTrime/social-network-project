@@ -1,13 +1,14 @@
 import React from 'react';
-import './../App.css';
+import s from './NewPost.module.css';
 
-const NewPost = () => {
+const NewPost = (props) => {
     return (
-        <div className='newPost'>
+        <div className={s.newPost}>
             <img src='https://cdn.pixabay.com/photo/2012/04/12/10/49/speech-29435_640.png'/>
             <div>
-                Welcome, let's start
+                {props.message}
             </div>
+            <button>Like</button>
         </div>
     );
 }

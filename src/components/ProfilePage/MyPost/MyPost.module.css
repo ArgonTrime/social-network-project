@@ -1,0 +1,14 @@
+.myPost {
+    padding: 20px 0px;
+}
+.newPostTextForm {
+    width: 1020px;
+    height: 100px;
+    resize: none;
+}
+
+.buttonPost {
+    float: right;
+    background-color: #339966;
+    color: white;
+}

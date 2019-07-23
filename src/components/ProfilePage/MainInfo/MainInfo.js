@@ -1,11 +1,11 @@
 import React from 'react';
-import './../App.css';
+import s from './MainInfo.module.css';
 
 const MainInfo = () => {
     return (
         <div className='mainInfo'>
-            <img className='mainImage' src='https://www.ionos.ca/digitalguide/fileadmin/DigitalGuide/Teaser/social-media-plattformen-t.jpg' alt='social network'/>
-            <img className='mainAvatar' src='https://www.shareicon.net/download/2017/02/05/878221_user_512x512.png' alt='avatar'/>
+            <img className={s.mainImage} src='https://www.ionos.ca/digitalguide/fileadmin/DigitalGuide/Teaser/social-media-plattformen-t.jpg' alt='social network'/>
+            <img className={s.mainAvatar} src='https://www.shareicon.net/download/2017/02/05/878221_user_512x512.png' alt='avatar'/>
             <div>
                 <h1>
                     Ihar Trymailau

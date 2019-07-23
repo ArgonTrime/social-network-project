@@ -1,10 +1,10 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header'
-import Navbar from "./components/Navbar";
-import DialogsPage from "./components/DialogsPage";
-// import ProfilePage from "./components/ProfilePage";
+import Header from './components/Header/Header'
+import Navbar from "./components/Navbar/Navbar";
+// import DialogsPage from "./components/DialogsPage";
+import ProfilePage from "./components/ProfilePage/ProfilePage";
 
 
 const App = () => {
@@ -12,8 +12,8 @@ const App = () => {
     <div className="App">
       <Header/>
       <Navbar/>
-      <DialogsPage/>
-      {/*<ProfilePage/>*/}
+      {/*<DialogsPage/>*/}
+      <ProfilePage/>
     </div>
   );
 }
