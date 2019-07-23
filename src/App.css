@@ -1,33 +1,87 @@
+/* grid css allPage */
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-areas:
+          "h h"
+          "nb mc";
+  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 64px 1fr;
+  grid-gap: 10px;
+  width: 1200px;
+  margin: 0 auto;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+/* grid css for header, Header component, remove comments work - ProfilePage*/
+.header {
+  grid-area: h;
+  background-color: #339966	;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+.header img {
+  height: 60px;
+  margin: 2px;
+}
+
+/* grid css navBar, NavBar component */
+.navbar {
+  grid-area: nb;
+  background-color: #CCCCCC;
+  height: 100vh;
+}
+.navbar div {
+  background-color: #339966;
+  color: white;
+  margin: 5px;
+  padding: 2px;
+}
+
+/* grid css mainContent */
+.maincontent {
+  grid-area: mc;
+  background-color: white;
+}
+
+/* css MainInfo component */
+.mainImage {
+  width: 1020px;
+  height: 300px;
+}
+.mainAvatar {
+  width: 150px;
+  height: 150px;
+  float: left;
+  padding: 20px;
+}
+
+/* css MyPost component */
+.myPost {
+  padding: 20px 0px;
+}
+.newPostTextForm {
+  width: 1020px;
+  height: 100px;
+  resize: none;
+}
+
+.buttonPost {
+  float: right;
+  background-color: #339966;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* css NewPost component */
+.newPost {
+  width: 980px;
+  height: 50px;
+  padding: 20px;
+}
+.newPost img {
+  float: left;
+  padding-right: 20px;
+  width: 50px;
+  height: 50px;
+
 }
