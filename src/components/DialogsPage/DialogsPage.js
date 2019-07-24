@@ -1,5 +1,5 @@
 import React from 'react';
-import './../cssComponents/DialogsPage.css';
+import s from './DialogsPage.module.css';
 
 const DialogsPage = () => {
     return (

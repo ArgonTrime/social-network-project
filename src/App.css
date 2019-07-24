@@ -1,4 +1,3 @@
-/* grid css allPage */
 .App {
   display: grid;
   grid-template-areas:
@@ -11,3 +10,7 @@
   margin: 0 auto;
 }
 
+.app-maincontent {
+  grid-area: mc;
+  background-color: white;
+}

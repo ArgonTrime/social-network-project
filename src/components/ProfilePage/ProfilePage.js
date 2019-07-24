@@ -6,7 +6,7 @@ import NewPost from "./NewPost/NewPost";
 
 const ProfilePage = () => {
     return (
-        <div className={s.maincontent}>
+        <div>
             <MainInfo/>
             <MyPost/>
             <NewPost message='Welcome, Social network'/>
