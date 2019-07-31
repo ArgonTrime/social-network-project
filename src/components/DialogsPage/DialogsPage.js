@@ -3,11 +3,11 @@ import s from './DialogsPage.module.css';
 
 const DialogsPage = () => {
     return (
-        <div className='dialogPage'>
-            <div className='dialogs'>
+        <div className={s.dialogPage}>
+            <div className={s.dialogs}>
                 <h1>DIALOGS</h1>
             </div>
-            <div className='messegeListLeft'>
+            <div className={s.messegeListLeft}>
                 <ul>
                     <li>Andrey</li>
                     <li>Dmitry</li>
@@ -18,8 +18,8 @@ const DialogsPage = () => {
                     <li>Alexey</li>
                 </ul>
             </div>
-            <div className='messegeRight'>
-                <div className='dialogMessege'>messege user</div>
+            <div className={s.messegeRight}>
+                <div className={s.dialogMessege}>messege user</div>
             </div>
         </div>
     );

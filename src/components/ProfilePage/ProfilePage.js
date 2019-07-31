@@ -9,9 +9,9 @@ const ProfilePage = () => {
         <div>
             <MainInfo/>
             <MyPost/>
-            <NewPost message='Welcome, Social network'/>
-            <NewPost message='How are you?'/>
-            <NewPost message='Great moving in the right direction'/>
+            <NewPost message='Welcome, Social network' likeCounts='5'/>
+            <NewPost message='How are you?' likeCounts='1'/>
+            <NewPost message='Great moving in the right direction' likeCounts='13'/>
         </div>
     );
 }
