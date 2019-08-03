@@ -14,23 +14,36 @@ const Messege = (props) => {
 }
 
 const DialogsPage = () => {
+
+    let dialogData = [
+        {id:1, name: 'Ihar'},
+        {id:2, name: 'Julia'},
+        {id:3, name: 'Alex'},
+        {id:4, name: 'Sasha'},
+        {id:5, name: 'Artem'}
+    ]
+    let messegeData = [
+        {id:1, messege: 'How a you?'},
+        {id:2, messege: 'Grate!'},
+        {id:3, messege: 'You upgrade React skill?'}
+    ]
+
     return (
         <div className={s.dialogPage}>
             <div className={s.dialogs}>
                 <h1>DIALOGS</h1>
             </div>
             <div className={s.dialogsListLeft}>
-                <Dialog name='Ihar' id='1'/>
-                <Dialog name='Julia' id='2'/>
-                <Dialog name='Dmitry' id='3'/>
-                <Dialog name='Alexey' id='4'/>
-                <Dialog name='Sasha' id='5'/>
-                <Dialog name='Artem' id='6'/>
+                <Dialog name={dialogData[0].name} id={dialogData[0].id}/>
+                <Dialog name={dialogData[1].name} id={dialogData[1].id}/>
+                <Dialog name={dialogData[2].name} id={dialogData[2].id}/>
+                <Dialog name={dialogData[3].name} id={dialogData[3].id}/>
+                <Dialog name={dialogData[4].name} id={dialogData[4].id}/>
             </div>
             <div className={s.messegeRight}>
-                <Messege messege='Messege user'/>
-                <Messege messege='Messege user'/>
-                <Messege messege='Messege user'/>
+                <Messege messege={messegeData[0].messege}/>
+                <Messege messege={messegeData[1].messege}/>
+                <Messege messege={messegeData[2].messege}/>
             </div>
         </div>
     );
