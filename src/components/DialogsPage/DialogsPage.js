@@ -28,22 +28,19 @@ const DialogsPage = () => {
         {id:3, messege: 'You upgrade React skill?'}
     ]
 
+    let dialogs = dialogData.map( d => <Dialog name={d.name} id={d.id}/>);
+    let messeges = messegeData.map( m => <Messege messege={m.messege}/>);
+
     return (
         <div className={s.dialogPage}>
             <div className={s.dialogs}>
                 <h1>DIALOGS</h1>
             </div>
             <div className={s.dialogsListLeft}>
-                <Dialog name={dialogData[0].name} id={dialogData[0].id}/>
-                <Dialog name={dialogData[1].name} id={dialogData[1].id}/>
-                <Dialog name={dialogData[2].name} id={dialogData[2].id}/>
-                <Dialog name={dialogData[3].name} id={dialogData[3].id}/>
-                <Dialog name={dialogData[4].name} id={dialogData[4].id}/>
+                {dialogs}
             </div>
             <div className={s.messegeRight}>
-                <Messege messege={messegeData[0].messege}/>
-                <Messege messege={messegeData[1].messege}/>
-                <Messege messege={messegeData[2].messege}/>
+                {messeges}
             </div>
         </div>
     );
