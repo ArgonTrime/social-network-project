@@ -11,15 +11,16 @@ import {BrowserRouter, Route} from "react-router-dom";
 
 
 
-const App = () => {
+const App = (props) => {
+
     return (
         <BrowserRouter>
             <div className="App">
                 <Header/>
                 <Navbar/>
                 <div className='app-maincontent'>
-                    <Route path='/dialogs' component={DialogsPage}/>
-                    <Route path='/profile' component={ProfilePage}/>
+                    <Route path='/dialogs' render={ () => <DialogsPage dialogMesseges={props.dialogMesseges} dialogList={props.dialogList}/>}/>
+                    <Route path='/profile' render={ () => <ProfilePage profilePosts={props.profilePosts}/>}/>
                     <Route path='/news' component={News}/>
                     <Route path='/music' component={Music}/>
                     <Route path='/settings' component={Settings}/>
