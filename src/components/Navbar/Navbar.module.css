@@ -3,7 +3,7 @@
     background-color: #CCCCCC;
     height: 100vh;
 }
-.navbar div {
+.navbar .item {
     background-color: #339966;
     margin: 5px;
     padding: 2px;
@@ -16,4 +16,11 @@
 
 .item a.activeLink {
     color: white;
+}
+
+.friendItem {
+    padding: 5px;
+    margin: 50px 5px 5px 5px;
+    background-color: #339966;
+
 }

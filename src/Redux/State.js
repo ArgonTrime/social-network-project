@@ -1,4 +1,11 @@
 let state = {
+    navBar: {
+        friend: [
+            {id:1, name: 'Ihar'},
+            {id:2, name: 'Julia'},
+            {id:2, name: 'Marina'}
+        ]
+    },
     profilePage: {
       profilePosts: [
           {id:1, messege: 'Welcome, Social network', likeCounts: 15},
