@@ -17,16 +17,8 @@
     border-right: 1px solid #339966;
     height: auto;
 }
-.dialog {
-    padding: 10px;
-}
-
 
 .messegeRight {
     grid-area: mr;
     margin: 20px;
-}
-
-.messege {
-    border: solid 1px #339966;
 }
