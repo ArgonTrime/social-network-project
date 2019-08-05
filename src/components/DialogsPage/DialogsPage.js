@@ -5,8 +5,8 @@ import Messege from "./Messege/Messege";
 
 const DialogsPage = (props) => {
 
-    let dialogs = props.dialogList.map( d => <Dialog name={d.name} id={d.id}/>);
-    let messeges = props.dialogMesseges.map( m => <Messege messege={m.messege}/>);
+    let dialogs = props.state.dialogList.map( d => <Dialog name={d.name} id={d.id}/>);
+    let messeges = props.state.dialogMesseges.map( m => <Messege messege={m.messege}/>);
 
     return (
         <div className={s.dialogPage}>
