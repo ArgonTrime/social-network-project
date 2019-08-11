@@ -6,14 +6,21 @@ const MyPost = (props) => {
 
     let messeges = props.profilePosts.map( m => <NewPost message={m.messege} likeCounts={m.likeCounts}/>);
 
+    let newPostElement = React.createRef();
+    let addNewPost = () => {
+        let text = newPostElement.current.value;
+        alert(text);
+    }
+
+
     return (
         <div className={s.myPost}>
             <form>
                 <div><h2>My Post</h2></div>
                 <div>
-                    <textarea className={s.newPostTextForm} name='newpost'></textarea>
+                    <textarea ref={newPostElement} className={s.newPostTextForm} name='newpost'></textarea>
                 </div>
-                <div><input className={s.buttonPost} type='button' value='Send'/></div>
+                <div><input onClick={addNewPost} className={s.buttonPost} type='button' value='Add'/></div>
             </form>
 
             {messeges}

@@ -8,6 +8,12 @@ const DialogsPage = (props) => {
     let dialogs = props.state.dialogList.map( d => <Dialog name={d.name} id={d.id}/>);
     let messeges = props.state.dialogMesseges.map( m => <Messege messege={m.messege}/>);
 
+    let newPostElement = React.createRef();
+    let addNewPost = () => {
+        let text = newPostElement.current.value;
+        alert(text);
+    }
+
     return (
         <div className={s.dialogPage}>
             <div className={s.dialogs}>
@@ -17,7 +23,11 @@ const DialogsPage = (props) => {
                 {dialogs}
             </div>
             <div className={s.messegeRight}>
-                {messeges}
+                <div>
+                    {messeges}
+                </div>
+                <div><textarea ref={newPostElement} className={s.newPostTextForm} name='newpost'></textarea></div>
+                <div><input onClick={addNewPost} className={s.buttonPost} type='button' value='Add'/></div>
             </div>
         </div>
     );
