@@ -8,8 +8,12 @@ const MyPost = (props) => {
 
     let newPostElement = React.createRef();
     let addPostProfile = () => {
+        props.addPostProfile();
+    }
+
+    let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.addPostProfile(text);
+        props.updateNewPostProfile(text);
     }
 
 
@@ -18,7 +22,7 @@ const MyPost = (props) => {
             <form>
                 <div><h2>My Post</h2></div>
                 <div>
-                    <textarea ref={newPostElement} className={s.newPostTextForm} name='newpost'></textarea>
+                    <textarea onChange={onPostChange} ref={newPostElement} className={s.newPostTextForm} value={props.newPostText}></textarea>
                 </div>
                 <div><input onClick={addPostProfile} className={s.buttonPost} type='button' value='Add'/></div>
             </form>

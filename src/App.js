@@ -20,7 +20,9 @@ const App = (props) => {
                 <Navbar state={props.state.navBar}/>
                 <div className='app-maincontent'>
                     <Route path='/dialogs' render={ () => <DialogsPage state={props.state.dialogPage}/>}/>
-                    <Route path='/profile' render={ () => <ProfilePage state={props.state.profilePage} addPostProfile={props.addPostProfile}/>}/>
+                    <Route path='/profile' render={ () => <ProfilePage profilePage={props.state.profilePage}
+                                                                       addPostProfile={props.addPostProfile}
+                                                                       updateNewPostProfile={props.updateNewPostProfile}/>}/>
                     <Route path='/news' component={News}/>
                     <Route path='/music' component={Music}/>
                     <Route path='/settings' component={Settings}/>

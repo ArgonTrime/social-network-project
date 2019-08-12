@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 let state = {
     navBar: {
         friend: [
@@ -12,7 +14,8 @@ let state = {
           {id:2, messege: 'How are you?', likeCounts: 3},
           {id:3, messege: 'Great moving in the right direction', likeCounts: 9},
           {id:4, messege: 'Add messege map, good!', likeCounts: 4}
-      ]
+      ],
+        newPostText: ''
     },
     dialogPage: {
         dialogList: [
@@ -30,13 +33,20 @@ let state = {
     }
 }
 
-export let addPostProfile = (postMessege) => {
+export let addPostProfile = () => {
     let newPost = {
         id: 5,
-        messege: postMessege,
+        messege: state.profilePage.newPostText,
         likeCounts: 0
     }
     state.profilePage.profilePosts.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderEntireTree(state);
+}
+
+export let updateNewPostProfile = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
 }
 
 export default state;
