@@ -8,6 +8,8 @@ const store = {
     getState() {
         return this._state;
     },
+
+
     _state: {
         navBar: {
             friend: [
@@ -40,19 +42,34 @@ const store = {
             ]
         }
     },
-    addPostProfile() {
-        let newPost = {
-            id: 5,
-            messege: this._state.profilePage.newPostText,
-            likeCounts: 0
+    // addPostProfile() {
+    //     let newPost = {
+    //         id: 5,
+    //         messege: this._state.profilePage.newPostText,
+    //         likeCounts: 0
+    //     }
+    //     this._state.profilePage.profilePosts.push(newPost);
+    //     this._state.profilePage.newPostText = '';
+    //     this._callback();
+    // },
+    // updateNewPostProfile(newText) {
+    //     this._state.profilePage.newPostText = newText;
+    //     this._callback();
+    // },
+    dispatch(action) {
+        if (action.type === 'ADD-POST-PROFILE') {
+            let newPost = {
+                id: 5,
+                messege: this._state.profilePage.newPostText,
+                likeCounts: 0
+            }
+            this._state.profilePage.profilePosts.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callback();
+        } else if (action.type === 'UPDATE-NEW-POST-PROFILE'){
+            this._state.profilePage.newPostText = action.newText;
+            this._callback();
         }
-        this._state.profilePage.profilePosts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callback();
-    },
-    updateNewPostProfile(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callback();
     }
 }
 

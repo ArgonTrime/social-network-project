@@ -11,8 +11,7 @@ store.subscribe( () => {
 
 let rerenderEntireTree = () => {
     ReactDOM.render(<App state={store.getState()}
-                         addPostProfile={store.addPostProfile.bind(store)}
-                         updateNewPostProfile={store.updateNewPostProfile.bind(store)}/>, document.getElementById('root'));
+                         dispatch={store.dispatch.bind(store)}/>, document.getElementById('root'));
 }
 rerenderEntireTree();
 

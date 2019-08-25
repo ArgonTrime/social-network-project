@@ -21,8 +21,7 @@ const App = (props) => {
                 <div className='app-maincontent'>
                     <Route path='/dialogs' render={ () => <DialogsPage state={props.state.dialogPage}/>}/>
                     <Route path='/profile' render={ () => <ProfilePage profilePage={props.state.profilePage}
-                                                                       addPostProfile={props.addPostProfile}
-                                                                       updateNewPostProfile={props.updateNewPostProfile}/>}/>
+                                                                       dispatch={props.dispatch}/>}/>
                     <Route path='/news' component={News}/>
                     <Route path='/music' component={Music}/>
                     <Route path='/settings' component={Settings}/>
@@ -30,6 +29,6 @@ const App = (props) => {
             </div>
         </BrowserRouter>
     );
-}
+};
 
 export default App;
