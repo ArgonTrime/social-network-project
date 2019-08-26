@@ -1,3 +1,7 @@
+const ADD_POST_PROFILE = 'ADD-POST-PROFILE';
+const UPDATE_NEW_POST_PROFILE = 'UPDATE-NEW-POST-PROFILE';
+
+
 const store = {
     _callback() {
 
@@ -42,22 +46,8 @@ const store = {
             ]
         }
     },
-    // addPostProfile() {
-    //     let newPost = {
-    //         id: 5,
-    //         messege: this._state.profilePage.newPostText,
-    //         likeCounts: 0
-    //     }
-    //     this._state.profilePage.profilePosts.push(newPost);
-    //     this._state.profilePage.newPostText = '';
-    //     this._callback();
-    // },
-    // updateNewPostProfile(newText) {
-    //     this._state.profilePage.newPostText = newText;
-    //     this._callback();
-    // },
     dispatch(action) {
-        if (action.type === 'ADD-POST-PROFILE') {
+        if (action.type === ADD_POST_PROFILE) {
             let newPost = {
                 id: 5,
                 messege: this._state.profilePage.newPostText,
@@ -66,11 +56,19 @@ const store = {
             this._state.profilePage.profilePosts.push(newPost);
             this._state.profilePage.newPostText = '';
             this._callback();
-        } else if (action.type === 'UPDATE-NEW-POST-PROFILE'){
+        } else if (action.type === UPDATE_NEW_POST_PROFILE){
             this._state.profilePage.newPostText = action.newText;
             this._callback();
         }
     }
 }
+
+export const addPostProfileActionCreator = () => ({
+    type: ADD_POST_PROFILE
+})
+export const updateNewPostProfileActionCreator = (text) => ({
+    type: UPDATE_NEW_POST_PROFILE,
+    newText: text
+})
 
 export default store;
