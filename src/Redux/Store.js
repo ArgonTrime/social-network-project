@@ -1,7 +1,5 @@
-const ADD_POST_PROFILE = 'ADD-POST-PROFILE';
-const UPDATE_NEW_POST_PROFILE = 'UPDATE-NEW-POST-PROFILE';
-const ADD_NEW_DIALOG_MESSEGE = 'ADD-NEW-DIALOG-MESSEGE';
-const UPDATE_NEW_DIALOG_MESSEGE = 'UPDATE-NEW-DIALOG-MESSEGE';
+import profileReducer from "./profileReducer";
+import dialogPageReducer from "./dialogsPageReducer";
 
 
 const store = {
@@ -50,48 +48,11 @@ const store = {
         }
     },
     dispatch(action) {
-        if (action.type === ADD_POST_PROFILE) {
-            let newPost = {
-                id: 5,
-                messege: this._state.profilePage.newPostText,
-                likeCounts: 0
-            };
-            this._state.profilePage.profilePosts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callback();
-        } else if (action.type === UPDATE_NEW_POST_PROFILE){
-            this._state.profilePage.newPostText = action.newText;
-            this._callback();
-        } else if (action.type === ADD_NEW_DIALOG_MESSEGE) {
-            let newMessege = {
-                id: 4,
-                messege: this._state.dialogPage.newDialogMessege
-            };
-            this._state.dialogPage.dialogMesseges.push(newMessege);
-            this._state.dialogPage.newDialogMessege = '';
-            this._callback();
-        } else if (action.type === UPDATE_NEW_DIALOG_MESSEGE) {
-            this._state.dialogPage.newDialogMessege = action.newText;
-            this._callback();
-        }
+
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogPage = dialogPageReducer(this._state.dialogPage, action);
+
+        this._callback();
     }
 };
-
-export const addPostProfileActionCreator = () => ({
-    type: ADD_POST_PROFILE
-});
-export const updateNewPostProfileActionCreator = (text) => ({
-    type: UPDATE_NEW_POST_PROFILE,
-    newText: text
-});
-
-export const addNewDialogMessege = () => ({
-    type: ADD_NEW_DIALOG_MESSEGE
-});
-export const updateNewDialogMessege = (text) => ({
-    type: UPDATE_NEW_DIALOG_MESSEGE,
-    newText: text
-});
-
-
 export default store;
