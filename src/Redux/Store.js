@@ -1,5 +1,6 @@
 import profileReducer from "./profileReducer";
 import dialogPageReducer from "./dialogsPageReducer";
+import navBarReducer from "./navBarReducer";
 
 
 const store = {
@@ -51,6 +52,7 @@ const store = {
 
         this._state.profilePage = profileReducer(this._state.profilePage, action);
         this._state.dialogPage = dialogPageReducer(this._state.dialogPage, action);
+        this._state.navBar = navBarReducer(this._state.navBar, action);
 
         this._callback();
     }
