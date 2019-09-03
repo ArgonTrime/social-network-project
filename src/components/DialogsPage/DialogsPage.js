@@ -5,20 +5,20 @@ import Messege from "./Messege/Messege";
 import {addNewDialogMessege, updateNewDialogMessege} from "../../Redux/dialogsPageReducer";
 
 const DialogsPage = (props) => {
+    let state = props.dialogPage;
 
-    let dialogs = props.state.dialogList.map(d => <Dialog name={d.name} id={d.id}/>);
-    let messeges = props.state.dialogMesseges.map(m => <Messege messege={m.messege}/>);
+    let dialogs = state.dialogList.map(d => <Dialog name={d.name} id={d.id}/>);
+    let messeges = state.dialogMesseges.map(m => <Messege messege={m.messege}/>);
 
     let newPostElement = React.createRef();
     let addNewPost = () => {
-        let action = addNewDialogMessege();
-        props.dispatch(action);
+        props.addNewDialogMessege();
     };
 
     let addMessegeDialog = () => {
         let text = newPostElement.current.value;
-        let action = updateNewDialogMessege(text);
-        props.dispatch(action);
+        props.updateNewDialogMessege(text);
+
     };
 
     return (
@@ -34,7 +34,7 @@ const DialogsPage = (props) => {
                     {messeges}
                 </div>
                 <div><textarea onChange={addMessegeDialog} ref={newPostElement} className={s.newPostTextForm}
-                               value={props.state.newDialogMessege}/></div>
+                               value={state.newDialogMessege}/></div>
                 <div><input onClick={addNewPost} className={s.buttonPost} type='button' value='Add'/></div>
             </div>
         </div>
