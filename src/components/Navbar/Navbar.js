@@ -23,10 +23,10 @@ const Navbar = (props) => {
             </div>
 
             <div className={s.friendItem}>
-                <Friends friend={props.state.friend}/>
+                <Friends friend={props.friend}/>
             </div>
         </nav>
     );
-}
+};
 
 export default Navbar;
