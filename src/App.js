@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header/Header'
-import Navbar from "./components/Navbar/Navbar";
 import ProfilePage from "./components/ProfilePage/ProfilePage";
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
@@ -9,6 +8,7 @@ import Music from "./components/Music/Music";
 import {Route} from "react-router-dom";
 import DialogsPageContainer from "./components/DialogsPage/DialogsPageContainer";
 import NavbarContainer from "./components/Navbar/NavbarContainer";
+import Users from "./components/Users/Users";
 
 
 const App = (props) => {
@@ -23,6 +23,7 @@ const App = (props) => {
                 <Route path='/news' component={News}/>
                 <Route path='/music' component={Music}/>
                 <Route path='/settings' component={Settings}/>
+                <Route path='/users' component={Users}/>
             </div>
         </div>
     );
