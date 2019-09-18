@@ -24,17 +24,18 @@ const dialogPageReducer = (state = initialState, action) => {
                 id: 4,
                 messege: state.newDialogMessege
             };
-            let stateCopy = {...state};
-            stateCopy.dialogMesseges = [...stateCopy.dialogMesseges];
-            stateCopy.dialogMesseges.push(newMessege);
-            stateCopy.newDialogMessege = '';
-            return stateCopy;
+            return {
+                ...state,
+                dialogMesseges: [...state.dialogMesseges, newMessege],
+                newDialogMessege: ''
+            }
         }
-        case UPDATE_NEW_DIALOG_MESSEGE: {
-            let stateCopy = {...state};
-            stateCopy.newDialogMessege = action.newText;
-            return stateCopy;
-        }
+        case
+        UPDATE_NEW_DIALOG_MESSEGE:
+        return {
+            ...state,
+            newDialogMessege: action.newText
+        };
         default:
             return state;
     }
