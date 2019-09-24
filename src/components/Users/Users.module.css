@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 3px solid #339966;
+    border-radius: 25px;
+    margin-top: 10px;
+    padding: 5px;
+}
+.container img {
+    width: 100px;
+    height: 100px;
+}
+.box-1 {
+    flex: 1;
+    flex-direction: column;
+}
+
+.box-2 {
+    flex: 3;
+}
+.box-3 {
+    flex: 1;
+    flex-direction: column;
+}
+
+
+
+.btn {
+
+}
