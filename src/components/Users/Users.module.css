@@ -26,6 +26,11 @@
 
 
 
-.btn {
-
+.btnF {
+    background-color: #339966;
+    color: white;
+}
+.btnU {
+    background-color: darksalmon;
+    color: white;
 }
