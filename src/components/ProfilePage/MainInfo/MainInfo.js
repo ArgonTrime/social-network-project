@@ -5,7 +5,7 @@ const MainInfo = () => {
     return (
         <div className={s.mainInfo}>
             <img className={s.mainImage} src='https://www.ionos.ca/digitalguide/fileadmin/DigitalGuide/Teaser/social-media-plattformen-t.jpg' alt='social network'/>
-            <img className={s.mainAvatar} src='https://www.shareicon.net/download/2017/02/05/878221_user_512x512.png' alt='avatar'/>
+            <img className={s.mainAvatar} src='https://cdn0.iconfinder.com/data/icons/user-pictures/100/matureman1-512.png' alt='avatar'/>
             <div>
                 <h1>
                     Ihar Trymailau
@@ -25,6 +25,6 @@ const MainInfo = () => {
             </div>
         </div>
     );
-}
+};
 
 export default MainInfo;

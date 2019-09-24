@@ -11,6 +11,9 @@
     width: 100px;
     height: 100px;
 }
+.container button {
+    margin-left: 22px;
+}
 .box-1 {
     flex: 1;
     flex-direction: column;

@@ -4,8 +4,8 @@ const SET_USERS = 'SET_USERS';
 
 let initialState = {
     users: [
-        {id: 1, fullname: 'Ihar', status:'Learning web-development', location: {country: 'Belarus', city: 'Minsk'}, followCheck: false},
-        {id: 2, fullname: 'Julia', status:'Looking for the best', location: {country: 'Belarus', city: 'Minsk'}, followCheck: true}
+        {id: 1, fullname: 'Ihar', status:'Learning web-development', location: {country: 'Belarus', city: 'Minsk'}, followCheck: false, avatarUrl: 'https://cdn0.iconfinder.com/data/icons/user-pictures/100/matureman1-512.png'},
+        {id: 2, fullname: 'Julia', status:'Looking for the best', location: {country: 'Belarus', city: 'Minsk'}, followCheck: true, avatarUrl: 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png'}
 
     ]
 };
