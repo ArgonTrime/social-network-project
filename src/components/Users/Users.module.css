@@ -32,8 +32,10 @@
 .btnF {
     background-color: #339966;
     color: white;
+    outline: none;
 }
 .btnU {
     background-color: darksalmon;
     color: white;
+    outline: none;
 }
