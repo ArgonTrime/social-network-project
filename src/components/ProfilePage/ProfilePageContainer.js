@@ -9,8 +9,7 @@ class ProfilePageContainer extends React.Component {
         axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`).then(response => {
             this.props.setUserProfile(response.data);
         });
-
-    }
+    };
 
     render() {
         return (
@@ -21,6 +20,6 @@ class ProfilePageContainer extends React.Component {
     }
 }
 let mapStateToProps = (state) => ({
-    profile: state.profile
+    profile: state.profilePage.profile
 });
 export default connect(mapStateToProps, {setUserProfile})(ProfilePageContainer);

@@ -1,7 +1,7 @@
 .mainInfo {
     width: 100%;
 }
-.mainImage {
+.main__ImageLogo {
     width: 100%;
     height: 300px;
 }
@@ -10,4 +10,21 @@
     height: 150px;
     float: left;
     padding: 20px;
+}
+
+.mainInfo__Block {
+
+}
+
+.mainInfo__userBlock {
+    display: flex;
+}
+.mainInfo__userInfo {
+    margin-left: 20px;
+    align-items: center;
+}
+
+.contacts__Images {
+    width: 30px;
+    height: 30px;
 }
