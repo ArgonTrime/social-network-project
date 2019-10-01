@@ -5,10 +5,10 @@ import MyPostContainer from "./MyPost/MyPostContainer";
 const ProfilePage = (props) => {
     return (
         <div>
-            <MainInfo/>
-            <MyPostContainer store={props.store}/>
+            <MainInfo profile={props.profile}/>
+            <MyPostContainer/>
         </div>
     );
-}
+};
 
 export default ProfilePage;

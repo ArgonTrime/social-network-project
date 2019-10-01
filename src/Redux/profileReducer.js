@@ -1,5 +1,6 @@
 const ADD_POST_PROFILE = 'ADD-POST-PROFILE';
 const UPDATE_NEW_POST_PROFILE = 'UPDATE-NEW-POST-PROFILE';
+const SET_USER_PROFILE = 'SET-USER-PROFILE';
 
 let initialState = {
     profilePosts: [
@@ -8,7 +9,8 @@ let initialState = {
         {id: 3, messege: 'Great moving in the right direction', likeCounts: 9},
         {id: 4, messege: 'Add messege map, good!', likeCounts: 4}
     ],
-    newPostText: ''
+    newPostText: '',
+    profile: null
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -30,6 +32,11 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 newPostText: action.newText
             }
+        case SET_USER_PROFILE:
+            return {
+                ...state,
+                profile: action.profile
+            }
         default:
             return state;
     }
@@ -42,6 +49,10 @@ export const addPostProfile = () => ({
 export const updateNewPostProfile = (text) => ({
     type: UPDATE_NEW_POST_PROFILE,
     newText: text
+});
+export const setUserProfile = (profile) => ({
+    type: SET_USER_PROFILE,
+    profile
 });
 
 export default profileReducer;
