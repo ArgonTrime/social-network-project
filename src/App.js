@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header/Header'
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import Music from "./components/Music/Music";
@@ -9,14 +8,15 @@ import DialogsPageContainer from "./components/DialogsPage/DialogsPageContainer"
 import NavbarContainer from "./components/Navbar/NavbarContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfilePageContainer from "./components/ProfilePage/ProfilePageContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 
 const App = (props) => {
 
     return (
         <div className="App">
-            <Header/>
-            <NavbarContainer store={props.store}/>
+            <HeaderContainer/>
+            <NavbarContainer/>
             <div className='app-maincontent'>
                 <Route path='/dialogs' render={() => <DialogsPageContainer/>}/>
                 <Route path='/profile/:userId?' render={() => <ProfilePageContainer/>}/>
