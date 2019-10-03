@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Users.module.css';
 import userAvatar from '../../image/user.png';
 import {NavLink} from "react-router-dom";
+import * as axios from "axios";
 
 let Users = (props) => {
 
@@ -28,11 +29,30 @@ let Users = (props) => {
                     <div>
                         <NavLink to={'/profile/' + u.id}><img src={u.photos.small != null ? u.photos.small : userAvatar}/></NavLink>
                     </div>
-                    <div>{u.followed ? <button className={s.btnU} onClick={() => {
-                        props.unfollow(u.id)
-                    }}>Unfollow</button> : <button className={s.btnF} onClick={() => {
-                        props.follow(u.id)
-                    }}>Follow</button>}</div>
+                    <div>{u.followed
+                        ? <button className={s.btnU} onClick={() => {
+                            axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+                                withCredentials: true,
+                                headers: {'API-KEY': '4b706b4c-7c99-4d0d-b85a-2aa4479071ce'}
+                            }).then(response => {
+                                if (response.data.resultCode === 0) {
+                                    props.unfollow(u.id)
+                                }
+                            });
+                           }}>Unfollow</button>
+
+
+                        : <button className={s.btnF} onClick={() => {
+                            axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                                withCredentials: true,
+                                headers: {'API-KEY': '4b706b4c-7c99-4d0d-b85a-2aa4479071ce'}
+                            }).then(response => {
+                                if (response.data.resultCode === 0) {
+                                    props.follow(u.id)
+                                }
+                            });
+                            }}>Follow</button>}
+                    </div>
                 </div>
 
                 <div className={s.box2}>
