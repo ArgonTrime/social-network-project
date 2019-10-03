@@ -19,7 +19,7 @@ const App = (props) => {
             <NavbarContainer store={props.store}/>
             <div className='app-maincontent'>
                 <Route path='/dialogs' render={() => <DialogsPageContainer/>}/>
-                <Route path='/profile' render={() => <ProfilePageContainer/>}/>
+                <Route path='/profile/:userId?' render={() => <ProfilePageContainer/>}/>
                 <Route path='/news' component={News}/>
                 <Route path='/music' component={Music}/>
                 <Route path='/settings' component={Settings}/>
