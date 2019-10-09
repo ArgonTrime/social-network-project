@@ -30,20 +30,24 @@ let Users = (props) => {
                         <NavLink to={'/profile/' + u.id}><img src={u.photos.small != null ? u.photos.small : userAvatar}/></NavLink>
                     </div>
                     <div>{u.followed
-                        ? <button className={s.btnU} onClick={() => {
+                        ? <button disabled={props.followingInProgres.some(id => id === u.id)} className={s.btnU} onClick={() => {
+                            props.toggleIsFollowingProgres(true, u.id);
                             componentsAPI.unfollow(u.id).then(data => {
                                 if (data.resultCode === 0) {
                                     props.unfollow(u.id)
                                 }
+                                props.toggleIsFollowingProgres(false, u.id);
                             });
                            }}>Unfollow</button>
 
 
-                        : <button className={s.btnF} onClick={() => {
+                        : <button disabled={props.followingInProgres.some(id => id === u.id)} className={s.btnF} onClick={() => {
+                            props.toggleIsFollowingProgres(true, u.id);
                             componentsAPI.follow(u.id).then(data => {
                                 if (data.resultCode === 0) {
                                     props.follow(u.id)
                                 }
+                                props.toggleIsFollowingProgres(false, u.id);
                             });
                             }}>Follow</button>}
                     </div>
