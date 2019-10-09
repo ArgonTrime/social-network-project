@@ -18,5 +18,11 @@ export const componentsAPI = {
     },
     getProfile(userId) {
         return instance.get(`profile/${userId}`).then(responce => {return responce.data})
+    },
+    unfollow(id) {
+        return instance.delete(`follow/${id}`).then(responce => {return responce.data})
+    },
+    follow(id) {
+        return instance.post(`follow/${id}`, {}).then(responce => {return responce.data})
     }
 };
