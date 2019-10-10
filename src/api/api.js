@@ -23,6 +23,6 @@ export const componentsAPI = {
         return instance.delete(`follow/${id}`).then(responce => {return responce.data})
     },
     follow(id) {
-        return instance.post(`follow/${id}`, {}).then(responce => {return responce.data})
+        return instance.post(`follow/${id}`).then(responce => {return responce.data})
     }
 };
