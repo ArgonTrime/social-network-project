@@ -22,8 +22,6 @@ const DialogsPage = (props) => {
 
     };
 
-    if(!props.isAuth) return <Redirect to={'/login'}/>
-
     return (
         <div className={s.dialogPage}>
             <div className={s.dialogs}>
