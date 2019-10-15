@@ -2,6 +2,7 @@ import React from 'react';
 import {addPostProfile, updateNewPostProfile} from "../../../Redux/profileReducer";
 import MyPost from "./MyPost";
 import {connect} from "react-redux";
+import {compose} from "redux";
 
 
 
@@ -12,8 +13,15 @@ let mapStateToProps = (state) => {
     }
 };
 
-const MyPostContainer = connect(mapStateToProps, {
-    updateNewPostText: updateNewPostProfile,
-    addPost: addPostProfile
-})(MyPost);
-export default MyPostContainer;
+// const MyPostContainer = connect(mapStateToProps, {
+//     updateNewPostText: updateNewPostProfile,
+//     addPost: addPostProfile
+// })(MyPost);
+// export default MyPostContainer;
+
+export default compose(
+    connect(mapStateToProps, {
+        updateNewPostText: updateNewPostProfile,
+        addPost: addPostProfile
+    })
+)(MyPost);
