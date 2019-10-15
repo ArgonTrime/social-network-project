@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './MainInfo.module.css';
 import Preloader from "../../Preloader/Preloader";
+import ProfileStatus from "./ProfileStatus/ProfileStatus";
 
 const MainInfo = (props) => {
 
@@ -26,6 +27,7 @@ const MainInfo = (props) => {
                         ? <a href={props.profile.contacts.vk}><img className={s.contacts__Images} src='https://icon-library.net/images/vk-icon-png/vk-icon-png-23.jpg'/></a>
                         : ''}</p>
                 </div>
+                <ProfileStatus status='test'/>
             </div>
         </div>
     );
