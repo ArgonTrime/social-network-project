@@ -18,16 +18,16 @@ const MainInfo = (props) => {
                 <div>
                     <img src={props.profile.photos.small}/>
                 </div>
-                <div className={s.mainInfo__userInfo}>
-                    <h1>{props.profile.fullName}</h1>
-                    <p>{props.profile.aboutMe}</p>
-                    <p>Work: {props.profile.lookingForAJob ? 'yes' : 'no'}</p>
-                    <p>Searching work: {props.profile.lookingForAJobDescription}</p>
-                    <p>Contacts: {props.profile.contacts.vk
-                        ? <a href={props.profile.contacts.vk}><img className={s.contacts__Images} src='https://icon-library.net/images/vk-icon-png/vk-icon-png-23.jpg'/></a>
-                        : ''}</p>
-                </div>
-                <ProfileStatus status='test'/>
+                {/*<div className={s.mainInfo__userInfo}>*/}
+                {/*    <h1>{props.profile.fullName}</h1>*/}
+                {/*    <p>{props.profile.aboutMe}</p>*/}
+                {/*    <p>Work: {props.profile.lookingForAJob ? 'yes' : 'no'}</p>*/}
+                {/*    <p>Searching work: {props.profile.lookingForAJobDescription}</p>*/}
+                {/*    <p>Contacts: {props.profile.contacts.vk*/}
+                {/*        ? <a href={props.profile.contacts.vk}><img className={s.contacts__Images} src='https://icon-library.net/images/vk-icon-png/vk-icon-png-23.jpg'/></a>*/}
+                {/*        : ''}</p>*/}
+                {/*</div>*/}
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
             </div>
         </div>
     );
