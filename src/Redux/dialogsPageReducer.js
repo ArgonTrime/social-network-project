@@ -1,5 +1,4 @@
 const ADD_NEW_DIALOG_MESSEGE = 'ADD-NEW-DIALOG-MESSEGE';
-const UPDATE_NEW_DIALOG_MESSEGE = 'UPDATE-NEW-DIALOG-MESSEGE';
 
 let initialState = {
     dialogList: [
@@ -13,8 +12,7 @@ let initialState = {
         {id: 1, messege: 'How a you?'},
         {id: 2, messege: 'Grate!'},
         {id: 3, messege: 'You upgrade React skill?'}
-    ],
-    newDialogMessege: ''
+    ]
 };
 
 const dialogPageReducer = (state = initialState, action) => {
@@ -22,32 +20,22 @@ const dialogPageReducer = (state = initialState, action) => {
         case ADD_NEW_DIALOG_MESSEGE: {
             let newMessege = {
                 id: 4,
-                messege: state.newDialogMessege
+                messege: action.newMessageBody
             };
             return {
                 ...state,
-                dialogMesseges: [...state.dialogMesseges, newMessege],
-                newDialogMessege: ''
+                dialogMesseges: [...state.dialogMesseges, newMessege]
             }
         }
-        case
-        UPDATE_NEW_DIALOG_MESSEGE:
-        return {
-            ...state,
-            newDialogMessege: action.newText
-        };
         default:
             return state;
     }
 };
 
 
-export const addNewDialogMessege = () => ({
-    type: ADD_NEW_DIALOG_MESSEGE
-});
-export const updateNewDialogMessege = (text) => ({
-    type: UPDATE_NEW_DIALOG_MESSEGE,
-    newText: text
+export const addNewDialogMessege = (newMessageBody) => ({
+    type: ADD_NEW_DIALOG_MESSEGE,
+    newMessageBody
 });
 
 export default dialogPageReducer;

@@ -1,7 +1,6 @@
-import {componentsAPI, profileAPI} from "../api/api";
+import {profileAPI} from "../api/api";
 
 const ADD_POST_PROFILE = 'ADD-POST-PROFILE';
-const UPDATE_NEW_POST_PROFILE = 'UPDATE-NEW-POST-PROFILE';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
 const SET_STATUS = 'SET_STATUS';
 
@@ -12,30 +11,24 @@ let initialState = {
         {id: 3, messege: 'Great moving in the right direction', likeCounts: 9},
         {id: 4, messege: 'Add messege map, good!', likeCounts: 4}
     ],
-    newPostText: '',
     profile: null,
     status: ''
 };
 
 const profileReducer = (state = initialState, action) => {
+    debugger
     switch (action.type) {
         case ADD_POST_PROFILE: {
             let newPost = {
                 id: 5,
-                messege: state.newPostText,
+                messege: action.newMessageBody,
                 likeCounts: 0
             };
             return {
                 ...state,
-                profilePosts: [...state.profilePosts, newPost],
-                newPostText: ''
+                profilePosts: [...state.profilePosts, newPost]
             }
         }
-        case UPDATE_NEW_POST_PROFILE:
-            return {
-                ...state,
-                newPostText: action.newText
-            }
         case SET_USER_PROFILE:
             return {
                 ...state,
@@ -52,8 +45,7 @@ const profileReducer = (state = initialState, action) => {
 
 };
 
-export const addPostProfile = () => ({type: ADD_POST_PROFILE});
-export const updateNewPostProfile = (text) => ({type: UPDATE_NEW_POST_PROFILE, newText: text});
+export const addPostProfile = (newMessageBody) => ({type: ADD_POST_PROFILE, newMessageBody});
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const setStatus = (status) => ({type: SET_STATUS, status});
 
