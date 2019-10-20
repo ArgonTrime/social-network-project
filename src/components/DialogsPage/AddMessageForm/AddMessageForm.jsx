@@ -1,18 +1,20 @@
 import React from 'react';
 import s from "../DialogsPage.module.css";
 import {Field} from "redux-form";
+import Textarea from "../../FormControls/Textarea";
+import {required} from "../../../utils/validators/validators";
 
 const AddMessageForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field component='textarea' name='newMessageBody' placeholder='Enter your message'/>
-                {/*<textarea onChange={addMessegeDialog} ref={newPostElement} className={s.newPostTextForm}*/}
-                {/*           value={state.newDialogMessege}/>*/}
+                <Field component={Textarea}
+                       name='newMessageBody'
+                       placeholder='Enter your message'
+                       validate={[required, props.validate]}/>
             </div>
             <div>
                 <button>Send</button>
-                {/*<input onClick={addNewPost} className={s.buttonPost} type='button' value='Add'/>*/}
             </div>
         </form>
     )

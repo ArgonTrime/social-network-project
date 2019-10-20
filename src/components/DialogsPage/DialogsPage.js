@@ -4,6 +4,7 @@ import Dialog from "./Dialog/Dialog";
 import Messege from "./Messege/Messege";
 import AddMessageForm from "./AddMessageForm/AddMessageForm";
 import {reduxForm} from "redux-form";
+import {maxLengthCreator} from "../../utils/validators/validators";
 
 const DialogsPage = (props) => {
     let state = props.dialogPage;
@@ -16,6 +17,8 @@ const DialogsPage = (props) => {
         props.addNewDialogMessege(values.newMessageBody);
     };
 
+
+    const maxLength50 = maxLengthCreator(50);
     return (
         <div className={s.dialogPage}>
             <div className={s.dialogs}>
@@ -28,7 +31,7 @@ const DialogsPage = (props) => {
                 <div>
                     {messeges}
                 </div>
-                <AddMessageFormRedux onSubmit={addNewMessage}/>
+                <AddMessageFormRedux onSubmit={addNewMessage} validate={maxLength50}/>
             </div>
         </div>
     );
