@@ -4,10 +4,10 @@ import {Field} from "redux-form";
 const LoginForm = (props) => {
     return <form onSubmit={props.handleSubmit}>
         <div>
-            <Field placeholder={'Login'} component={'input'} name={'login'}/>
+            <Field placeholder={'Email'} component={'input'} name={'login'}/>
         </div>
         <div>
-            <Field placeholder={'Password'} component={'input'} name={'password'}/>
+            <Field placeholder={'Password'} component={'input'} name={'password'} type={'password'}/>
         </div>
         <div>
             <Field type={'checkbox'} component={'input'} name={'rememberMe'}/> remember me

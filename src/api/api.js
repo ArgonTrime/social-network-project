@@ -13,9 +13,7 @@ export const componentsAPI = {
                 return responce.data;
             })
     },
-    getLogin() {
-        return instance.get(`auth/me`).then(responce => {return responce.data})
-    },
+
     unfollow(id) {
         return instance.delete(`follow/${id}`).then(responce => {return responce.data})
     },
@@ -35,4 +33,16 @@ export const profileAPI = {
         return instance.put(`profile/status`, {status: status}).then(responce => {return responce.data})
 
     }
+};
+
+export const authAPI = {
+    getLogin() {
+        return instance.get(`auth/me`).then(responce => {return responce.data})
+    },
+    login(email, password, rememberMe = false) {
+        return instance.post(`auth/login`, {email, password, rememberMe}).then(responce => {return responce.data})
+    },
+    logout() {
+        return instance.delete(`auth/login`).then(responce => {return responce.data})
+    },
 };
