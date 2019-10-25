@@ -1,4 +1,5 @@
 import React from 'react';
+import s from './LoginForm.module.css';
 import {Field} from "redux-form";
 
 const LoginForm = (props) => {
@@ -12,6 +13,9 @@ const LoginForm = (props) => {
         <div>
             <Field type={'checkbox'} component={'input'} name={'rememberMe'}/> remember me
         </div>
+        {props.error && <div className={s.formSummaryError}>
+            {props.error}
+        </div>}
         <div>
             <button>Submit</button>
         </div>
