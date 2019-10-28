@@ -45,15 +45,6 @@ let mapStateToProps = (state) => {
         followingInProgres: state.usersPage.followingInProgres
     }
 };
-
-// export default connect(mapStateToProps, {
-//     follow,
-//     unfollow,
-//     setCurrentPage,
-//     toggleIsFollowingProgres,
-//     getUsers
-// })(UsersContainer);
-
 export default compose(
     connect(mapStateToProps, {
         follow,

@@ -7,7 +7,7 @@ const Header = (props) => {
         <header className={s.header}>
             <img src='https://styleguide.audiomack.com/styleguide/assets/images/logos/mark-orange.png'/>
             {props.isAuth
-                ? <div>
+                ? <div className={s.loginBlock}>
                     <span className={s.loginBlock}>{props.login} - <button onClick={props.logout}>Logout</button></span>
                   </div>
                 : <NavLink className={s.loginBlock} to={'/login'}>Login</NavLink>}

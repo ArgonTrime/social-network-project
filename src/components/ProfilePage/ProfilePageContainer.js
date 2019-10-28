@@ -11,15 +11,12 @@ class ProfilePageContainer extends React.Component {
         let userId = this.props.match.params.userId;
         if (!userId) {
             userId = this.props.autorizedUserId;
+            if (!userId) {
+                this.props.history.push('/login');
+            }
         }
         this.props.getProfile(userId);
         this.props.getStatus(userId);
-
-
-        // if (!userId) {userId = 2}
-        // componentsAPI.getProfile(userId).then(data => {
-        //     this.props.setUserProfile(data);
-        // });
     };
 
     render() {
@@ -35,18 +32,12 @@ class ProfilePageContainer extends React.Component {
     }
 }
 
-
 let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
     status: state.profilePage.status,
     autorizedUserId: state.auth.userId,
     isAuth: state.auth.isAuth
 });
-
-
-// let AuthRedirectComponent = withAuthRedirect(ProfilePageContainer);
-// let WithUrlDataContainerComponent =  withRouter(AuthRedirectComponent);
-// export default connect(mapStateToProps, {getProfile})(WithUrlDataContainerComponent);
 
 export default compose(
     connect(mapStateToProps, {getProfile, getStatus, updateStatus}),
