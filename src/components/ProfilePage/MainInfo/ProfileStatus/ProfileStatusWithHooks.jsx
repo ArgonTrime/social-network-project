@@ -1,9 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 
 const ProfileStatusWithHooks = (props) => {
     let [editMode, setEditMode] = useState(false);
     let [status, setStatus] = useState(props.status);
+
+    useEffect(() => {
+        setStatus(props.status);
+    }, [props.status]);
+
     const activateMode = () => {
         setEditMode(true);
     };
@@ -12,7 +17,7 @@ const ProfileStatusWithHooks = (props) => {
         props.updateStatus(status);
     };
     const onStatusChange = (e) => {
-        setStatus(e.current.value);
+        setStatus(e.currentTarget.value);
     };
     return (
         <div>
@@ -29,6 +34,4 @@ const ProfileStatusWithHooks = (props) => {
         </div>
     );
 };
-
-
 export default ProfileStatusWithHooks;
