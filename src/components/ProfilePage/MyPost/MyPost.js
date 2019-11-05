@@ -7,8 +7,7 @@ import {maxLengthCreator} from "../../../utils/validators/validators";
 
 
 
-const MyPost = (props) => {
-    debugger;
+const MyPost = React.memo(props => {
     let messeges = props.profilePosts.map( m => <NewPost message={m.messege} likeCounts={m.likeCounts} key={m.id}/>);
 
     let addNewMessage = (values) => {
@@ -24,6 +23,6 @@ const MyPost = (props) => {
             {messeges}
         </div>
     );
-};
+});
 const AddMessageMyPostFormRedux = reduxForm({form: 'addMessageProfile'})(AddMessageMyPostForm);
 export default MyPost;
