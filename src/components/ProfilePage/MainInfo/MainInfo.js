@@ -1,12 +1,11 @@
 import React from 'react';
 import s from './MainInfo.module.css';
 import Preloader from "../../Preloader/Preloader";
-import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
 
-const MainInfo = (props) => {
+const MainInfo = ({profile, status, updateStatus}) => {
 
-    if(!props.profile) {
+    if(!profile) {
         return <Preloader/>
     }
 
@@ -17,21 +16,12 @@ const MainInfo = (props) => {
             </div>
             <div className={s.mainInfo__userBlock}>
                 <div>
-                    <img src={props.profile.photos.small}/>
+                    {/*adding user avatar is null*/}
+                    <img src={profile.photos.small != null ? profile.photos.small : ''}/>
                 </div>
-                {/*<div className={s.mainInfo__userInfo}>*/}
-                {/*    <h1>{props.profile.fullName}</h1>*/}
-                {/*    <p>{props.profile.aboutMe}</p>*/}
-                {/*    <p>Work: {props.profile.lookingForAJob ? 'yes' : 'no'}</p>*/}
-                {/*    <p>Searching work: {props.profile.lookingForAJobDescription}</p>*/}
-                {/*    <p>Contacts: {props.profile.contacts.vk*/}
-                {/*        ? <a href={props.profile.contacts.vk}><img className={s.contacts__Images} src='https://icon-library.net/images/vk-icon-png/vk-icon-png-23.jpg'/></a>*/}
-                {/*        : ''}</p>*/}
-                {/*</div>*/}
-                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
             </div>
         </div>
     );
 };
-
 export default MainInfo;

@@ -1,4 +1,4 @@
-const ADD_NEW_DIALOG_MESSEGE = 'ADD-NEW-DIALOG-MESSEGE';
+const ADD_NEW_DIALOG_MESSEGE = 'social-network-project/dialogs/ADD-NEW-DIALOG-MESSEGE';
 
 let initialState = {
     dialogList: [
@@ -33,9 +33,5 @@ const dialogPageReducer = (state = initialState, action) => {
 };
 
 
-export const addNewDialogMessege = (newMessageBody) => ({
-    type: ADD_NEW_DIALOG_MESSEGE,
-    newMessageBody
-});
-
+export const addNewDialogMessege = (newMessageBody) => ({type: ADD_NEW_DIALOG_MESSEGE, newMessageBody});
 export default dialogPageReducer;
