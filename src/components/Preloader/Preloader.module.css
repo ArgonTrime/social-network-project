@@ -1,2 +1,8 @@
 .preloader {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+.preloader span {
+    margin: 10px;
 }
