@@ -12,6 +12,18 @@
 }
 
 .loginBlock {
+    margin: 10px;
     float: right;
     color: white;
+}
+.loginBlock a{
+    margin: 10px;
+    float: right;
+    color: white;
+}
+
+.btnU {
+    background-color: darksalmon;
+    color: white;
+    outline: none;
 }
