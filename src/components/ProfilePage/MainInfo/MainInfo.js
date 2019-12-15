@@ -2,6 +2,7 @@ import React from 'react';
 import s from './MainInfo.module.css';
 import Preloader from "../../Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
+import userPhoto from '../../../image/user.png';
 
 const MainInfo = ({profile, status, updateStatus}) => {
 
@@ -17,7 +18,7 @@ const MainInfo = ({profile, status, updateStatus}) => {
             <div className={s.mainInfo__userBlock}>
                 <div>
                     {/*adding user avatar is null*/}
-                    <img src={profile.photos.small != null ? profile.photos.small : ''}/>
+                    <img src={profile.photos.small != null ? profile.photos.small : userPhoto}/>
                 </div>
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
             </div>
