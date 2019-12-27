@@ -18,7 +18,7 @@ const MainInfo = ({profile, status, updateStatus}) => {
             <div className={s.mainInfo__userBlock}>
                 <div>
                     {/*adding user avatar is null*/}
-                    <img src={profile.photos.small != null ? profile.photos.small : userPhoto}/>
+                    <img src={profile.photos.small != null ? profile.photos.small : userPhoto} className={s.avatar__standart}/>
                 </div>
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
             </div>
